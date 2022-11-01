@@ -14,7 +14,7 @@ public class Flight {
 	@Id
 	@SequenceGenerator(
 			name="flight_sequence",
-			sequenceName = "users_sequence",
+			sequenceName = "flight_sequence",
 			allocationSize= 1
 			)
 	@GeneratedValue(
@@ -22,38 +22,59 @@ public class Flight {
 			generator = "flight_sequence"
 			)
 	
-	private long id;
+	private long flight_id;
+	private String flight_no;
 	private String origin;
 	private String destination;
-	private int price;
-	private String AirlineId;
+	private String airline;
+	private double price;
+	private String fly_out_time;
+	private String flight_duration;
+	
 	
 	public Flight() {
+		super();
 	}
 
-	public Flight(long id, String origin, String destination, int price, String airlineId) {
+	public Flight(long flight_id, String flight_no, String origin, String destination, String airline, double price,
+			String fly_out_time, String flight_duration) {
 		super();
-		this.id = id;
+		this.flight_id = flight_id;
+		this.flight_no = flight_no;
 		this.origin = origin;
 		this.destination = destination;
+		this.airline = airline;
 		this.price = price;
-		AirlineId = airlineId;
+		this.fly_out_time = fly_out_time;
+		this.flight_duration = flight_duration;
 	}
 
-	public Flight(String origin, String destination, int price, String airlineId) {
+	public Flight(String flight_no, String origin, String destination, String airline, double price, String fly_out_time,
+			String flight_duration) {
 		super();
+		this.flight_no = flight_no;
 		this.origin = origin;
 		this.destination = destination;
+		this.airline = airline;
 		this.price = price;
-		AirlineId = airlineId;
+		this.fly_out_time = fly_out_time;
+		this.flight_duration = flight_duration;
 	}
 
-	public long getId() {
-		return id;
+	public long getFlight_id() {
+		return flight_id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setFlight_id(long flight_id) {
+		this.flight_id = flight_id;
+	}
+
+	public String getFlight_no() {
+		return flight_no;
+	}
+
+	public void setFlight_no(String flight_no) {
+		this.flight_no = flight_no;
 	}
 
 	public String getOrigin() {
@@ -72,27 +93,43 @@ public class Flight {
 		this.destination = destination;
 	}
 
-	public int getPrice() {
+	public String getAirline() {
+		return airline;
+	}
+
+	public void setAirline(String airline) {
+		this.airline = airline;
+	}
+
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 
-	public String getAirlineId() {
-		return AirlineId;
+	public String getFly_out_time() {
+		return fly_out_time;
 	}
 
-	public void setAirlineId(String airlineId) {
-		AirlineId = airlineId;
+	public void setFly_out_time(String fly_out_time) {
+		this.fly_out_time = fly_out_time;
+	}
+
+	public String getFlight_duration() {
+		return flight_duration;
+	}
+
+	public void setFlight_duration(String flight_duration) {
+		this.flight_duration = flight_duration;
 	}
 
 	@Override
 	public String toString() {
-		return "Flight [id=" + id + ", origin=" + origin + ", destination=" + destination + ", price=" + price
-				+ ", AirlineId=" + AirlineId + "]";
+		return "Flight [flight_id=" + flight_id + ", flight_no=" + flight_no + ", origin=" + origin + ", destination="
+				+ destination + ", airline=" + airline + ", price=" + price + ", fly_out_time=" + fly_out_time
+				+ ", flight_duration=" + flight_duration + "]";
 	}
 	
-
 }
