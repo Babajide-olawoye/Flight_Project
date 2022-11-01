@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.airline.project.Airline_Project.airline.Airline;
+
 @Entity
 @Table
 public class Flight {
@@ -30,6 +32,7 @@ public class Flight {
 	private double price;
 	private String fly_out_time;
 	private String flight_duration;
+
 	
 	
 	public Flight() {
