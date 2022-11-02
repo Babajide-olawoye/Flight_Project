@@ -1,7 +1,7 @@
 import React from "react";
 import Date from "./Date";
 import Arrival_Option from "./FlightOptions/Arrival_Option";
-import './Styling/Hme.css'
+//import './Styling/Hme.css'
 
 
 export default class Home extends React.Component{
@@ -19,35 +19,37 @@ export default class Home extends React.Component{
 
   render() {
     return (
-      <div className='home'>
-        <form className="form">
-          <div className="form__description">
-            <label>Departure from:</label>
-          </div>
-          <div>
+      <div className="create">
+          <h2>Please select a Flight</h2>
+          <form>
+          <label>Departure</label>
             <select onChange={this.handleChange}>
-              <option value="none" selected disabled hidden>Select available arrival options</option>
-              <option value="Seville">Seville</option>
-              <option value="Dublin">Dublin</option>
-              <option value="London">London</option>
-              <option value="Berlin">Berlin</option>
-              <option value="Vilnius">Vilnius</option>
-
+                  <option value="none" selected disabled hidden>Select...</option>
+                  <option value="Seville">Seville</option>
+                  <option value="Dublin">Dublin</option>
+                  <option value="London">London</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Vilnius">Vilnius</option>
             </select>
-          </div>
-          <div className="form__description">
-            <label>Arriving at:</label>
-          </div>
-          <div>
-            <Arrival_Option opt={this.state.departureChoice} />
-          </div>
-          <div>
 
-          </div>
+            <label>Destinations</label>
+            <select onChange={this.handleChange}>
+                  <option value="none" selected disabled hidden>Select...</option>
+                  <option value="Seville">Seville</option>
+                  <option value="Dublin">Dublin</option>
+                  <option value="London">London</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Vilnius">Vilnius</option>
+            </select>
 
-        </form>
+            <label>Departure date</label>
+            <input type="date" ></input>
+            <label>Return date</label>
+            <input type="date" ></input>
 
-      </div>
+            <button>Continue</button>
+      </form>
+    </div>
 
     );
   }
