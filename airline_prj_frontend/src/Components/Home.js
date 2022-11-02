@@ -26,7 +26,7 @@ export default class Home extends React.Component{
           </div>
           <div>
             <select onChange={this.handleChange}>
-              <option value="none" selected disabled hidden>Select available arriaval options</option>
+              <option value="none" selected disabled hidden>Select available arrival options</option>
               <option value="Seville">Seville</option>
               <option value="Dublin">Dublin</option>
               <option value="London">London</option>
