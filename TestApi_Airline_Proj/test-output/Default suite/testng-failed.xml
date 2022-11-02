@@ -7,6 +7,9 @@
         <methods>
           <include name="testAPI"/>
           <include name="getFlight_Departure_OnlySelectedCity"/>
+          <include name="getFlight_Departure_Arrival"/>
+          <include name="getAllFlight"/>
+          <include name="getFlight_Departure"/>
         </methods>
       </class> <!-- com.test.airline.proj.TestContols -->
     </classes>
