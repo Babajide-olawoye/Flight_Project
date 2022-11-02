@@ -23,31 +23,34 @@ export default class Home extends React.Component{
           <h2>Please select a Flight</h2>
           <form>
           <label>Departure</label>
-            <select onChange={this.handleChange}>
+            <select id="dpt" onChange={this.handleChange}>
                   <option value="none" selected disabled hidden>Select...</option>
-                  <option value="Seville">Seville</option>
-                  <option value="Dublin">Dublin</option>
-                  <option value="London">London</option>
-                  <option value="Berlin">Berlin</option>
-                  <option value="Vilnius">Vilnius</option>
+                  <option id="svl" value="Seville">Seville</option>
+                  <option id="dbl" value="Dublin">Dublin</option>
+                  <option id="lnd" value="London">London</option>
+                  <option id="brl"value="Berlin">Berlin</option>
+                  <option id="vln" value="Vilnius">Vilnius</option>
             </select>
 
             <label>Destinations</label>
-            <select onChange={this.handleChange}>
+            <select id="dst" onChange={this.handleChange}>
                   <option value="none" selected disabled hidden>Select...</option>
-                  <option value="Seville">Seville</option>
-                  <option value="Dublin">Dublin</option>
-                  <option value="London">London</option>
-                  <option value="Berlin">Berlin</option>
-                  <option value="Vilnius">Vilnius</option>
+                  <option id="svl1" value="Seville">Seville</option>
+                  <option id="dbl1" value="Dublin">Dublin</option>
+                  <option id="lnd1" value="London">London</option>
+                  <option id="brl1" value="Berlin">Berlin</option>
+                  <option id="vln1" value="Vilnius">Vilnius</option>
             </select>
 
             <label>Departure date</label>
-            <input type="date" ></input>
+            {/* <input type="date" ></input> */}
+            <input id="input1" placeholder="Departure Day" required/>
             <label>Return date</label>
-            <input type="date" ></input>
+            {/* <input type="date" ></input> */}
+            <input id="input2" placeholder="Return Date" required/>
+            
 
-            <button>Continue</button>
+            <button id="continue">Continue</button>
       </form>
     </div>
 

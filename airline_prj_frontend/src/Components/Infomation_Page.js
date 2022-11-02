@@ -24,14 +24,14 @@ export default function Information_Page() {
         
        
           <label>Age</label>
-          <input type="age" placeholder="Age" required/>
+          <input type="text" placeholder="Age" required/>
           <br/>
 
         <div className="submit">
-          
           <label>Grand total: €200.00</label>
           <button>Click to purchase</button>
         </div>
+
       </div>
     );
   }
