@@ -48,7 +48,7 @@ export default class Arrival_Option extends React.Component {
     render() {
         return (
             <div>
-                <GetData data={this.retrieveData}/>
+                <GetData />
                 <select onChange={this.useComponentDidUpdate}>
                     <option value="none" >Select available arriaval options</option>
                     {this.state.resultOpt.map((option) => (

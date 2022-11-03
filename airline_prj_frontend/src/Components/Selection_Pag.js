@@ -9,7 +9,7 @@ const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
 var random = [];
 
 export default function Selection_Page(props) {
-  console.log(props.location.state);
+  // console.log(props.location.state);
 
   const [data, setData] = useState([]);
 
