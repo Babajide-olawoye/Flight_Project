@@ -187,3 +187,38 @@ input{
 
 }
 
+/* Luggage */
+.options1{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px 1px #b1b1b1;
+}
+
+.options1 h1{
+  color: rgb(161, 99, 255);
+  background-color: white;
+}
+
+.yes{
+  margin-bottom: 10px;
+}
+
+.create1 .no{
+  background-color:rgb(188, 143, 255);
+  width: 150px;
+  font-size: 10px;
+  height: 20px;
+  padding: 3px;
+}
+
+.create1 .no:hover{
+  opacity: 5;
+  background-color:#7d3cff;
+  transition: background-color 500ms;
+  
+}
