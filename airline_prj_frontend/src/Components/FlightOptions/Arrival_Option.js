@@ -43,7 +43,7 @@ export default class Arrival_Option extends React.Component {
         return (
             <div>
                 <select onChange={this.useComponentDidUpdate}>
-                    <option value="none" >Select available arriaval options</option>
+                    <option value="none" >Select available arrival options</option>
                     {this.state.resultOpt.map((option) => (
                         <option value={option}>{option}</option>
                     ))}

@@ -29,24 +29,26 @@ export default function Home() {
         <h2>Please select a Flight</h2>
         <form>
           <label>Departure</label>
-            <select onChange={this.handleChange}>
+            <select id="dpt" onChange={useComponentDidUpdate}>
                   <option value="none" selected disabled hidden>Select...</option>
-                  <option value="Seville">Seville</option>
-                  <option value="Dublin">Dublin</option>
-                  <option value="London">London</option>
-                  <option value="Berlin">Berlin</option>
-                  <option value="Vilnius">Vilnius</option>
+                  <option id="svl" value="Seville">Seville</option>
+                  <option id="dbl" value="Dublin">Dublin</option>
+                  <option id="lnd" value="London">London</option>
+                  <option id="brl"value="Berlin">Berlin</option>
+                  <option id="vln" value="Vilnius">Vilnius</option>
             </select>
 
           <label>Destinations</label>
           <Arrival_Option opt={counterRef.current} getDest={getDestination}/>
 
-            <label>Departure date</label>
-            <input type="date" ></input>
-            <label>Return date</label>
-            <input type="date" ></input>
+          <label>Departure date</label>
+          {/* <input type="date" ></input> */}
+          <input id="input1" placeholder="Departure Day" required/>
+          <label>Return date</label>
+          {/* <input type="date" ></input> */}
+          <input id="input2" placeholder="Return Date" required/>
 
-            <button>Continue</button>
+          <button id="continue">Continue</button>
       </form>
     </div>
 
