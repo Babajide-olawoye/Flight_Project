@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { Component, useState, useEffect } from 'react';
+import GetData from "../GetData";
 
 
 const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
@@ -30,7 +31,7 @@ export default class Arrival_Option extends React.Component {
             this.name(this.props.opt);
             // this.props.getDest()
         }
-        console.log(this.state.resultOpt)
+        // console.log(this.state.resultOpt)
         // console.log(this.state.resultOpt)
     }
 
@@ -38,12 +39,18 @@ export default class Arrival_Option extends React.Component {
         this.props.getDest(e.target.value)
     }
 
+    retrieveData = (destination, arrival) =>{
+        console.log(destination);
+        console.log(arrival);
+    }
+
 
     render() {
         return (
             <div>
+                <GetData data={this.retrieveData}/>
                 <select onChange={this.useComponentDidUpdate}>
-                    <option value="none" >Select available arrival options</option>
+                    <option value="none" >Select available arriaval options</option>
                     {this.state.resultOpt.map((option) => (
                         <option value={option}>{option}</option>
                     ))}
