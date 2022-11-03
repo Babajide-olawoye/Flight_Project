@@ -46,8 +46,8 @@ export default function Home() {
           {/* <input type="date" ></input> */}
           <input id="input1" placeholder="Departure Day" required/>
           <label>Return date</label>
-          {/* <input type="date" ></input> */}
-          <input id="input2" placeholder="Return Date" required/>
+          <input type="date" ></input>
+          {/* <input id="input2" placeholder="Return Date" required/> */}
             
             <Link to="/Flight" state={{ departure: {counterRef}, arrival: {destinationRef} }}>
               <button id="continue">Continue</button>
