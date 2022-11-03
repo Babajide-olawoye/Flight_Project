@@ -68,6 +68,10 @@ option{
   box-shadow: 1px 3px 5px 1px #b1b1b1;
 }
 
+.white{
+  background-color: white;
+}
+
 .create1 {
   font-family: "Quicksand";
   max-width: 400px;
@@ -88,7 +92,7 @@ option{
   background-color: rgb(255, 255, 255);
   font-size: 20px;
   color: #7d3cff;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .create1 button {
@@ -126,6 +130,14 @@ option{
   transition: box-shadow 150ms;
 }
 
+.options:OnClick {
+  color: red;
+}
+
+.create1 h4{
+  background-color: white;
+  color: rgb(185, 139, 255);
+}
 
 /* Information page */
 

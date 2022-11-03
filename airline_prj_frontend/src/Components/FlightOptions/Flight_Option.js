@@ -4,7 +4,7 @@ export default function Flight_Option(props) {
 
     console.log(props.airline)
     return (
-        <div>
+        <div className="white">
             <label>Option </label>
             <div className="options">
                 <div>
