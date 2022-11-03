@@ -1,60 +1,44 @@
-export default function Selection_Page() {
-    return (
-      <div className="create1">
-        <h2>Please select a Flight</h2>
-        
-        <label>Option 1</label>
-        <div className="options">
-          <div>
-            <h3>Airline name</h3>
-            <label>Ryanair</label>
-          </div>
-          <div>
-            <h3>Price</h3>  
-            <label>€120.00</label>
-          </div>
-          <div>
-           <h3>Departure time</h3>  
-            <label>12:20am</label>
-          </div>
-        </div> 
-        
-        <label>Option 2</label>
-        <div className="options">
-          <div>
-            <h3>Airline name</h3>
-            <label>Airbaltic</label>
-          </div>
-          <div>
-            <h3>Price</h3>  
-            <label>€166.00</label>
-          </div>
-          <div>
-           <h3>Departure time</h3>  
-            <label>19:55am</label>
-          </div>
-        </div> 
-        
-        <label>Option 3</label>
-        <div className="options">
-          <div>
-          <h3>Airline name</h3>
-            <label>Aer Lingus</label>
-          </div>
-          <div>
-            <h3>Price</h3>  
-            <label>€100.00</label>
-          </div>
-          <div>
-           <h3>Departure time</h3>  
-            <label>06:40am</label>
-          </div>
-        </div> 
+import { Link } from "react-router-dom";
 
-        <button>Continue</button>
+import { render } from '@testing-library/react';
+import { Component, useState, useEffect } from 'react';
+import axios from 'axios';
+import Flight_Option from "./FlightOptions/Flight_Option";
 
-      </div>
-    );
-  }
-  
-  
+const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
+var random = [];
+
+export default function Selection_Page(props) {
+  console.log(props.location.state);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    api.get('/Seville/London')
+      .then((response) => {
+        // handle success
+        setData(response.data)
+        
+      })
+
+  }, []);
+
+
+  return (
+    <div className="create1">
+      <h2>Please select a Flight</h2>
+
+      {data.map(({ airline, price, fly_out_time }) => {
+        return <Flight_Option airline={airline} price={price} flight={fly_out_time} />
+      })}
+
+      {console.log(random)}
+
+      <button>
+        <Link to="/Luggage" className="btn btn-primary">Continue</Link>
+      </button>
+
+    </div>
+  );
+}
+

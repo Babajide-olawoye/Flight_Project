@@ -22,6 +22,7 @@ public class FlightController {
 	}
 	
 	//Returns all flight in db
+	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List <Flight> getFlights(){
 		return flightService.getFlights();
@@ -54,5 +55,18 @@ public class FlightController {
 	public Flight getFlights(@PathVariable String departure, @PathVariable String arrival, @PathVariable int num){
 		return flightService.getFlights(departure, arrival).get(num);
 	}
+	
+	
+	@RequestMapping(value = "/{departure}/options", method = RequestMethod.GET)
+	public List <String> getFlightOption(@PathVariable String departure){
+
+		return flightService.getFlightOptions(departure);
+	}
+	
+	@RequestMapping(value = "/test/{departure}/option/{num}", method = RequestMethod.GET)
+	public String getFlightOption(@PathVariable String departure, @PathVariable int num){
+		return flightService.getFlightOptions(departure).get(num);
+	}
+	
 	
 }

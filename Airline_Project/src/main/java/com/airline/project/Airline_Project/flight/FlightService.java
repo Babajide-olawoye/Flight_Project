@@ -1,6 +1,7 @@
 package com.airline.project.Airline_Project.flight;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,18 @@ public class FlightService {
 			}
 		}
 		return destination;
+	}
+	
+	//Get list of destination option based on departure city
+	public List<String> getFlightOptions(String departureCity){
+		List< String> flightOption = new ArrayList<>();
+		for(Flight flight: getFlights(departureCity)) {
+			if(!flightOption.contains(flight.getDestination())) {
+				flightOption.add(flight.getDestination());
+			}
+		}
+		
+		return flightOption;
 	}
 
 }
