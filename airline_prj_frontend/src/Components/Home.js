@@ -29,31 +29,26 @@ export default function Home() {
         <h2>Please select a Flight</h2>
         <form>
           <label>Departure</label>
-          <select onChange={useComponentDidUpdate}>
-            <option value="none" selected disabled hidden>Select...</option>
-            <option value="Seville">Seville</option>
-            <option value="Dublin">Dublin</option>
-            <option value="London">London</option>
-            <option value="Berlin">Berlin</option>
-            <option value="Vilnius">Vilnius</option>
-          </select>
+            <select onChange={this.handleChange}>
+                  <option value="none" selected disabled hidden>Select...</option>
+                  <option value="Seville">Seville</option>
+                  <option value="Dublin">Dublin</option>
+                  <option value="London">London</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Vilnius">Vilnius</option>
+            </select>
 
           <label>Destinations</label>
           <Arrival_Option opt={counterRef.current} getDest={getDestination}/>
 
-          <label>Departure date</label>
-          <input type="date" ></input>
-          <label>Return date</label>
-          <input type="date" ></input>
+            <label>Departure date</label>
+            <input type="date" ></input>
+            <label>Return date</label>
+            <input type="date" ></input>
 
-          <button>
-            <Link to={{
-              pathname: '/Flight',
-              state: "{destinationRef}"}} className="btn btn-primary"  >Continue</Link>
-          </button>
-
-        </form>
-      </div>
+            <button>Continue</button>
+      </form>
+    </div>
 
     );
   
