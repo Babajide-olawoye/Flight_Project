@@ -5,6 +5,7 @@ import useState from 'react-usestateref'
 import axios from 'axios';
 import Date from "./Date";
 import Arrival_Option from "./FlightOptions/Arrival_Option";
+import GetData from "./GetData";
 //import './Styling/Hme.css'
 const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
 
@@ -29,7 +30,7 @@ export default function Home() {
         <h2>Please select a Flight</h2>
         <form>
           <label>Departure</label>
-            <select id="dpt" onChange={useComponentDidUpdate}>
+          <select id="dpt" onChange={useComponentDidUpdate}>
                   <option value="none" selected disabled hidden>Select...</option>
                   <option id="svl" value="Seville">Seville</option>
                   <option id="dbl" value="Dublin">Dublin</option>
@@ -47,8 +48,9 @@ export default function Home() {
           <label>Return date</label>
           {/* <input type="date" ></input> */}
           <input id="input2" placeholder="Return Date" required/>
-
-          <button id="continue">Continue</button>
+            
+            <GetData destData ={destinationRef} arrivalData = {counterRef} />
+            <Link to="/Flight"><button id="continue">Continue</button></Link>
       </form>
     </div>
 
