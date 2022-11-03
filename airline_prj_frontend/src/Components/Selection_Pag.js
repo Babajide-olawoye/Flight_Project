@@ -48,7 +48,7 @@ export default function Selection_Page(props) {
       <div className="submit">
         <label id="date">Date 20-Nov-2022</label>
         <button>
-        <Link to="/Luggage" className="btn btn-primary">Continue</Link>
+        <Link to="/Luggage" className="btn btn-primary" state={{luggageType: data.airline}}>Continue</Link>
         </button>
       </div>
 

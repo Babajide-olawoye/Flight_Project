@@ -49,7 +49,7 @@ export default function Home() {
           {/* <input type="date" ></input> */}
           <input id="input2" placeholder="Return Date" required/>
             
-            <Link to="/Flight" state={{ departure: {counterRef}, arrival: {destinationRef} }}>
+            <Link to="/Flight" >
               <button id="continue">Continue</button>
             </Link>
       </form>
