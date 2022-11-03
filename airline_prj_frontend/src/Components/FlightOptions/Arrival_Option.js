@@ -1,57 +1,58 @@
 import React from "react";
+import axios from 'axios';
+import { Component, useState, useEffect } from 'react';
+import GetData from "../GetData";
 
-const sevilleOption = [
-    { value: 'Dublin', label: 'Dublin' },
-    { value: 'London', label: 'London' },
-    { value: 'Berlin', label: 'Berlin' }
-]
-const DublinOption = [
-    { value: 'Vilnius', label: 'Vilnius' },
-    { value: 'London', label: 'London' },
-    { value: 'Seville', label: 'Seville' }
-]
-const LondonOption = [
-    { value: 'Dublin', label: 'Dublin' },
-    { value: 'Seville', label: 'Seville' },
-    { value: 'Vilnius', label: 'Vilnius' },
-    { value: 'Berlin', label: 'Berlin' }
-]
-const BerlinOption = [
-    { value: 'Vilnius', label: 'Vilnius' },
-    { value: 'London', label: 'London' },
-    { value: 'Seville', label: 'Seville' }
-]
-const VilniusOption = [
-    { value: 'Berlin', label: 'Berlin' },
-    { value: 'London', label: 'London' },
-    { value: 'Dublin', label: 'Dublin' }
-]
+
+const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
 
 export default class Arrival_Option extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectOption: this.props.opt,
+            selectOption: "",
             resultOpt: []
 
         };
         this.componentDidUpdate.bind(this);
     }
+    
+    name = (selectOption) => {
+        api.get('/'+selectOption+'/options')
+        .then((res)=>{
+            this.setState({resultOpt: res.data})
+        })
+    }
     componentDidUpdate(){
-        if (this.state.selectOption == "Seville") {
-            this.setState({ resultOpt: sevilleOption });
+
+        if(this.state.selectOption != this.props.opt){
+            
+            this.setState({selectOption: this.props.opt})
+            this.name(this.props.opt);
+            // this.props.getDest()
         }
-        console.log(this.props.opt)
+        // console.log(this.state.resultOpt)
+        // console.log(this.state.resultOpt)
+    }
+
+    useComponentDidUpdate = e => {  
+        this.props.getDest(e.target.value)
+    }
+
+    retrieveData = (destination, arrival) =>{
+        console.log(destination);
+        console.log(arrival);
     }
 
 
     render() {
         return (
             <div>
-                <select>
+                <GetData data={this.retrieveData}/>
+                <select onChange={this.useComponentDidUpdate}>
                     <option value="none" >Select available arriaval options</option>
                     {this.state.resultOpt.map((option) => (
-                        <option value={option.value}>{option.label}</option>
+                        <option value={option}>{option}</option>
                     ))}
                 </select>
             </div>

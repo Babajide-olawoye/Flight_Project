@@ -12,8 +12,8 @@ import Selection_Pag from './Components/Selection_Pag'
 function App() {
   return(
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+          <Route path="/">
+            <Route index element={<Luggage_Selection_Pg />} />
             <Route path="UserInfo" element={<Information_Page />} />
             <Route path="Luggage" element={<Luggage_Selection_Pg />} />
             <Route path="Flight" element={<Selection_Pag />} />

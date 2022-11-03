@@ -1,54 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import useState from 'react-usestateref'
+
+import axios from 'axios';
 import Date from "./Date";
 import Arrival_Option from "./FlightOptions/Arrival_Option";
-import './Styling/Hme.css'
+import GetData from "./GetData";
+//import './Styling/Hme.css'
+const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
 
 
-export default class Home extends React.Component{
-  constructor(){
-    super();
-    this.state = {
-      departureChoice: ""
-    }
-    this.componentDidUpdate.bind(this);
+export default function Home() {
+  const [departureChoice, setDepartureChoice, counterRef] = useState(" ");
+  const [destination, setDestination, destinationRef] = useState(" ");
+
+  
+  const useComponentDidUpdate = e => {
+      setDepartureChoice(e.target.value)
+      console.log(counterRef.current)
   }
-  componentDidUpdate = e => {
-    this.setState({departureChoice: e.target.value})
-    console.log("From home "+this.state.departureChoice)
-  }
 
-  render() {
+  const getDestination = (destination) =>{
+    setDestination(destination);
+    console.log(destination)
+  }
+  
     return (
-      <div className='home'>
-        <form className="form">
-          <div className="form__description">
-            <label>Departure from:</label>
-          </div>
-          <div>
-            <select onChange={this.handleChange}>
-              <option value="none" selected disabled hidden>Select available arriaval options</option>
-              <option value="Seville">Seville</option>
-              <option value="Dublin">Dublin</option>
-              <option value="London">London</option>
-              <option value="Berlin">Berlin</option>
-              <option value="Vilnius">Vilnius</option>
-
+      <div className="create">
+        <h2>Please select a Flight</h2>
+        <form>
+          <label>Departure</label>
+          <select id="dpt" onChange={useComponentDidUpdate}>
+                  <option value="none" selected disabled hidden>Select...</option>
+                  <option id="svl" value="Seville">Seville</option>
+                  <option id="dbl" value="Dublin">Dublin</option>
+                  <option id="lnd" value="London">London</option>
+                  <option id="brl"value="Berlin">Berlin</option>
+                  <option id="vln" value="Vilnius">Vilnius</option>
             </select>
-          </div>
-          <div className="form__description">
-            <label>Arriving at:</label>
-          </div>
-          <div>
-            <Arrival_Option opt={this.state.departureChoice} />
-          </div>
-          <div>
 
-          </div>
+          <label>Destinations</label>
+          <Arrival_Option opt={counterRef.current} getDest={getDestination}/>
 
-        </form>
-
-      </div>
+          <label>Departure date</label>
+          {/* <input type="date" ></input> */}
+          <input id="input1" placeholder="Departure Day" required/>
+          <label>Return date</label>
+          {/* <input type="date" ></input> */}
+          <input id="input2" placeholder="Return Date" required/>
+            
+            <GetData destData ={destinationRef} arrivalData = {counterRef} />
+            <Link to="/Flight"><button id="continue">Continue</button></Link>
+      </form>
+    </div>
 
     );
-  }
+  
 }
