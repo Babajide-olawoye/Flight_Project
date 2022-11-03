@@ -130,10 +130,6 @@ option{
   transition: box-shadow 150ms;
 }
 
-.options:OnClick {
-  color: red;
-}
-
 .create1 h4{
   background-color: white;
   color: rgb(185, 139, 255);
@@ -238,4 +234,8 @@ input{
   background-color:#7d3cff;
   transition: background-color 500ms;
   
+}
+
+a{
+  text-decoration: none;
 }

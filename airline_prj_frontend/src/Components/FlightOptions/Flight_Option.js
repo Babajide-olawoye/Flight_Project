@@ -9,17 +9,18 @@ export default function Flight_Option(props) {
             <div className="options">
                 <div>
                     <h3>Airline name</h3>
-                    <label>{props.airline}</label>
+                    <label id={props.airline}>{props.airline}</label>
                 </div>
                 <div>
                     <h3>Price</h3>
-                    <label>€{props.price}</label>
+                    <label id={props.price} >€{props.price}</label>
                 </div>
                 <div>
                     <h3>Departure time</h3>
-                    <label>{props.flight}</label>
+                    <label id={props.flight}>{props.flight}</label>
                 </div>
             </div>
         </div>
+        
     )
 }
