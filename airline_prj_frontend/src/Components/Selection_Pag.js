@@ -34,9 +34,14 @@ export default function Selection_Page(props) {
 
       {console.log(random)}
 
-      <button>
+
+      <div className="submit">
+        <label id="date">Date 20-Nov-2022</label>
+        <button>
         <Link to="/Luggage" className="btn btn-primary">Continue</Link>
-      </button>
+        </button>
+      </div>
+
 
     </div>
   );

@@ -99,6 +99,11 @@ option{
   border-radius: 8px;
   cursor: pointer;
 }
+.create1 button a{
+  background-color:#7d3cff;
+  color: #fff;
+  cursor: pointer;
+}
 
 .options div label{
   color: rgb(161, 99, 255);

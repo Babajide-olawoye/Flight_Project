@@ -40,7 +40,7 @@ export default function Home() {
             </select>
 
           <label>Destinations</label>
-          <Arrival_Option opt={counterRef.current} getDest={getDestination}/>
+          <Arrival_Option opt={counterRef.current} getDest={getDestination} id="sls"/>
 
           <label>Departure date</label>
           {/* <input type="date" ></input> */}
