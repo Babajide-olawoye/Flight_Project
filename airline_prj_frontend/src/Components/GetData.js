@@ -9,7 +9,12 @@ import Date from "./Date";
 export default function GetData(props) {
   var destination = props.destData
   var arrival = props.arrivalData
+  console.log(destination)
+  
 
-//   props.data(destination, arrival)
+  if ('data' in props) {
+    props.data(destination, arrival)
+    
+  }
 
 }
