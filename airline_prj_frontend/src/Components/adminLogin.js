@@ -41,7 +41,8 @@ export default function AdminLogin() {
 
     return (
         <div>
-            <div className="options2">
+            <div className="create">
+                <h2>Admin login</h2>
                 <form>
                     <label className="admin" >Admin Id: </label>
                     <input type="text" required onChange={userInput_AdminId}></input>

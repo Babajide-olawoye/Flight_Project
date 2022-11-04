@@ -58,7 +58,7 @@ export default function Flight_Option(props) {
                 
             >
                 <PopoverHeader>How many passengers</PopoverHeader>
-                <PopoverBody>
+                <PopoverBody className="pop">
                     <ChosenFlight price={props.price} getPrice={getPriceFromChosenFlight}/>
                 </PopoverBody>
             </Popover>

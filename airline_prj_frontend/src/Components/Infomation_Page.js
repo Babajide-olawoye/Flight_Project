@@ -89,7 +89,7 @@ export default function Information_Page() {
       <br />
 
       <div className="submit">
-        <label>Grand total: €{totalPrice}</label>
+        <label id='sum'>Grand total: €{totalPrice}</label>
         <button onClick={onClickEventHandler}>Click to purchase</button>
       </div>
 
