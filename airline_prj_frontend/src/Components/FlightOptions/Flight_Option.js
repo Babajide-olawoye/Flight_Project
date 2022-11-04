@@ -16,6 +16,15 @@ export default function Flight_Option(props) {
         
     }
 
+    
+
+
+    const getPriceFromChosenFlight = (currentPrice) =>{
+        props.getSubPrice(currentPrice)
+        console.log(currentPrice)
+    }
+
+    // console.log()
     // console.log(props.airline)
     return (
         <div className="white">
@@ -44,7 +53,7 @@ export default function Flight_Option(props) {
             >
                 <PopoverHeader>How many passengers</PopoverHeader>
                 <PopoverBody>
-                    <ChosenFlight/>
+                    <ChosenFlight price={props.price} getPrice={getPriceFromChosenFlight}/>
                 </PopoverBody>
             </Popover>
         </div>

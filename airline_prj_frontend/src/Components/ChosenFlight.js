@@ -4,7 +4,11 @@ import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 
 export default function Chosen_Flight(props) {
   const [counter, setCounter] = useState(0);
-
+  const [currentPrice, setCurrentPrice] =useState(0)
+  
+  props.getPrice(props.price *counter)
+  
+  // console.log();
 
   return (
     <div>

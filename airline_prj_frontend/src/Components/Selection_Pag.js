@@ -16,6 +16,7 @@ export default function Selection_Page(props) {
   const { departure } = location.state
   const { arrival } = location.state
   const { departDate } = location.state
+  const [currentPrice, setCurrentPrice] = useState(0);
   let count = 1;
 
   let price = 0;
@@ -30,7 +31,11 @@ export default function Selection_Page(props) {
 
   }, []);
 
-  
+  const getPriceFromChosenFlight = (currentPrice) => {
+    console.log(currentPrice)
+    setCurrentPrice(currentPrice)
+  }
+
 
   return (
     <div className="create1">
@@ -39,12 +44,12 @@ export default function Selection_Page(props) {
       <h4>All flight from {departure.counterRef.current} to {arrival.destinationRef.current}</h4>
 
       {data.map(({ airline, price, fly_out_time }) => {
-        
-        return <Flight_Option  airline={airline} price={price} flight={fly_out_time} count={count++} />;
-        
+
+        return <Flight_Option getSubPrice={getPriceFromChosenFlight} airline={airline} price={price} flight={fly_out_time} count={count++} />;
+
       })}
 
-      
+
 
 
       <div className="submit">
@@ -53,7 +58,8 @@ export default function Selection_Page(props) {
           <Link to="/Luggage"
             state={{
               destination: arrival.destinationRef.current,
-              departDate: departDate.startDateRef.current
+              departDate: departDate.startDateRef.current,
+              subTotal: currentPrice
             }}
           >Continue</Link>
         </button>
