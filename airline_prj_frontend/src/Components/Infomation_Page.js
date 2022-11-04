@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import useState from 'react-usestateref'
 
 
@@ -22,7 +22,7 @@ export default function Information_Page() {
   const { purchaseDate } = location.state
   const { totalPrice } = location.state
 
-  
+  const navigate = useNavigate();
   var FormData = require('form-data');
   var data = new FormData();
   data.append('name', firstNameRef.current+' '+lastNameRef.current);
@@ -62,6 +62,7 @@ export default function Information_Page() {
       .then((response) => {
         // handle success
         console.log(response.status)
+        navigate('/Payment', {state: {totalPrice: totalPrice}})
       })
 
   }
