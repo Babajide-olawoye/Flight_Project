@@ -15,7 +15,7 @@ function App() {
   return(
         <Routes>
           <Route path="/">
-            <Route index element={<Home />} />
+            <Route index element={<Payment_Getaway_Page />} />
             <Route path="UserInfo" element={<Information_Page />} />
             <Route path="Luggage" element={<Luggage_Selection_Pg />} />
             <Route path="Flight" element={<Selection_Pag />} />

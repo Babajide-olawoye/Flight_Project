@@ -12,7 +12,7 @@ export default function Chosen_Flight(props) {
 
   return (
     <div>
-      <Button onClick={() => setCounter(counter + 1)}>+</Button>
+      <Button id="btn-secondary" onClick={() => setCounter(counter + 1)}>+</Button>
 
       <span className="ml-3">{counter}</span>
     </div>
