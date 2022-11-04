@@ -1,7 +1,6 @@
 import React from "react";
 import axios from 'axios';
 import { Component, useState, useEffect } from 'react';
-import GetData from "../GetData";
 
 
 const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })

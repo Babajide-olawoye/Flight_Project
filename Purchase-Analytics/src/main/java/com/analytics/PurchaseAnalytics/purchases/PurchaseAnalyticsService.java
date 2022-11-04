@@ -19,4 +19,12 @@ public class PurchaseAnalyticsService {
 	public List <PurchaseAnalytics> getPurchaseAnalytics() {
 		return purchaseAnalyticsRepository.findAll();
 	}
+	
+	public void postPurchaseAnalytics(PurchaseAnalytics pAnalyticsBody) {
+		purchaseAnalyticsRepository.save(pAnalyticsBody);
+	}
 }
+
+
+
+
