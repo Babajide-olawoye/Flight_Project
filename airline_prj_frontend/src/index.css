@@ -22,7 +22,7 @@ option{
   max-width: 500px;
   padding: 20px;
   border-radius: 20px;
-  margin: 200px auto;
+  margin: 80px auto;
   text-align: center;
   background-color: rgb(255, 255, 255);
 }
@@ -85,7 +85,7 @@ option{
   max-width: 420px;
   padding: 20px;
   border-radius: 20px;
-  margin: 200px auto;
+  margin: 80px auto;
   text-align: center;
   background-color: rgb(255, 255, 255);
 }
@@ -158,7 +158,7 @@ option{
   max-width: 440px;
   padding: 20px;
   border-radius: 20px;
-  margin: 200px auto;
+  margin: 80px auto;
   text-align: center;
   background-color: rgb(255, 255, 255);
 }
@@ -279,4 +279,29 @@ a{
 img{
   width: 300px;
   background-color: white;
+}
+
+.options2 label{
+  color: black;
+}
+
+.create h4{
+  background-color: white;
+  color: rgb(161, 99, 255);
+}
+
+.admin{
+  background-color:#b18aff;
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+h5{
+  background-color: white;
+  color:#7d3cff;
 }
