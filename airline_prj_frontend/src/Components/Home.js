@@ -5,7 +5,6 @@ import useState from 'react-usestateref'
 import axios from 'axios';
 import Date from "./Date";
 import Arrival_Option from "./FlightOptions/Arrival_Option";
-import GetData from "./GetData";
 //import './Styling/Hme.css'
 const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
 
@@ -13,7 +12,12 @@ const api = axios.create({ baseURL: 'http://localhost:8081/api/v1/flight' })
 export default function Home() {
   const [departureChoice, setDepartureChoice, counterRef] = useState(" ");
   const [destination, setDestination, destinationRef] = useState(" ");
+  const[startDate, setStartDate, startDateRef] = useState(' ');
 
+  const getDepartDate = (event) =>{
+    setStartDate(''+event.target.value)
+    console.log(startDateRef)
+  }
   
   const useComponentDidUpdate = e => {
       setDepartureChoice(e.target.value)
@@ -43,15 +47,17 @@ export default function Home() {
           <Arrival_Option opt={counterRef.current} getDest={getDestination} id="sls"/>
 
           <label>Departure date</label>
-          {/* <input type="date" ></input> */}
-          <input id="input1" placeholder="Departure Day" required/>
-          <label>Return date</label>
-          {/* <input type="date" ></input> */}
-          <input id="input2" placeholder="Return Date" required/>
-            
-            <Link to="/Flight" state={{ departure: {counterRef}, arrival: {destinationRef} }}>
-              <button id="continue">Continue</button>
-            </Link>
+
+        <input type="date" onChange={getDepartDate} />
+
+        <input id="input1" placeholder="Departure Day" required />
+        <label>Return date</label>
+        {/* <input type="date" ></input> */}
+        <input id="input2" placeholder="Return Date" required />
+
+        <Link to="/Flight" state={{departure: {counterRef}, arrival:{destinationRef}, departDate: {startDateRef}}} >
+          <button id="continue">Continue</button>
+        </Link>
       </form>
     </div>
 
