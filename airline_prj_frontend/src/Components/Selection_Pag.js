@@ -47,9 +47,9 @@ export default function Selection_Page(props) {
 
 
       <div className="submit">
-        <label id="date">{departDate.startDateRef.current}</label>
+        <label id="date">Date selected: {departDate.startDateRef.current}</label>
         <button>
-          <Link to="/Luggage" className="btn btn-primary"
+          <Link to="/Luggage"
             state={{
               destination: arrival.destinationRef.current,
               departDate: departDate.startDateRef.current

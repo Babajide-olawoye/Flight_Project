@@ -48,9 +48,9 @@ export default function Home() {
 
           <label>Departure date</label>
 
-        <input type="date" onChange={getDepartDate} />
+        <input id="input1" placeholder="Departure Day" required onChange={getDepartDate} />
 
-        <input id="input1" placeholder="Departure Day" required />
+        {/* <input type="date" id="input1" placeholder="Departure Day" required /> */}
         <label>Return date</label>
         {/* <input type="date" ></input> */}
         <input id="input2" placeholder="Return Date" required />

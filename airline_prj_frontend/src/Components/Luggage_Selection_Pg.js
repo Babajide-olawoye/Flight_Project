@@ -21,7 +21,7 @@ export default function Luggage_Selection_Pg() {
 
 
 
-      <Link to="/UserInfo"
+      <Link className="nolg" to="/UserInfo"
         state={{
           destination: destination,
           purchaseDate: departDate
