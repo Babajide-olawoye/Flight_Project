@@ -44,12 +44,6 @@ export default function Payment_Getaway_Page() {
 
             </div>
 
-
-
-
-
-
-
         </div>
 
       </div>
