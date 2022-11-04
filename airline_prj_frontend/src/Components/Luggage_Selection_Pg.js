@@ -6,8 +6,9 @@ export default function Luggage_Selection_Pg() {
   const location = useLocation()
   const { destination } = location.state
   const { departDate } = location.state
+  const { subTotal } = location.state
 
-  console.log(destination)
+  console.log(subTotal)
   return (
     <div className="create1">
       <h2>Would you like to add luggage to your flight?</h2>
@@ -24,7 +25,8 @@ export default function Luggage_Selection_Pg() {
       <Link className="nolg" to="/UserInfo"
         state={{
           destination: destination,
-          purchaseDate: departDate
+          purchaseDate: departDate,
+          totalPrice: subTotal+20
         }}
       >
         <button className="yes" id="yesBtn">Add Luggage</button>
@@ -33,7 +35,8 @@ export default function Luggage_Selection_Pg() {
       <Link to="/UserInfo"
         state={{
           destination: destination,
-          purchaseDate: departDate
+          purchaseDate: departDate,
+          totalPrice: subTotal
         }}
       >
         <button className="no" id="noBtn">No, continue without luggage </button>

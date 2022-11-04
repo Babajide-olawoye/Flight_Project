@@ -20,16 +20,18 @@ export default function Information_Page() {
   const location = useLocation()
   const { destination } = location.state
   const { purchaseDate } = location.state
+  const { totalPrice } = location.state
 
+  
   var FormData = require('form-data');
   var data = new FormData();
   data.append('name', firstNameRef.current+' '+lastNameRef.current);
   data.append('passportNo', passportNumRef.current);
   data.append('destination', destination);
-  data.append('price', '120');
+  data.append('price', totalPrice);
   data.append('purchaseDate', purchaseDate);
 
-  console.log(purchaseDate)
+  console.log(totalPrice)
 
   //Handlers for inputs
   const onChangeFirstName = (e) => {
@@ -86,7 +88,7 @@ export default function Information_Page() {
       <br />
 
       <div className="submit">
-        <label>Grand total: €200.00</label>
+        <label>Grand total: €{totalPrice}</label>
         <button onClick={onClickEventHandler}>Click to purchase</button>
       </div>
 
