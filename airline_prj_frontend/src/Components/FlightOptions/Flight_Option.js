@@ -3,13 +3,14 @@ import useState from 'react-usestateref'
 import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import ChosenFlight from "../ChosenFlight";
 
-
-
 export default function Flight_Option(props) {
     const [counter, setCounter, counterRef] = useState(0);
     const [popoverOpen, setPopoverOpen] = useState(false);
 
-    const toggle = () => setPopoverOpen(!popoverOpen);
+    const toggle = () => {
+        setPopoverOpen(!popoverOpen);
+        // props.setPopUp(true);
+    }
 
     const incrementCount = () =>{
         setCounter(counter+1);
@@ -46,10 +47,11 @@ export default function Flight_Option(props) {
             </div>
 
             <Popover
-                placement="bottom"
+                placement="right"
                 isOpen={popoverOpen}
                 target={"Popover"+props.count}
                 toggle={toggle}
+                
             >
                 <PopoverHeader>How many passengers</PopoverHeader>
                 <PopoverBody>

@@ -12,9 +12,10 @@ export default function Chosen_Flight(props) {
 
   return (
     <div>
+      <Button onClick={() => setCounter(counter - 1)}>-</Button>
       <Button onClick={() => setCounter(counter + 1)}>+</Button>
 
-      <span className="ml-3">{counter}</span>
+      <p textAlign='right' >{counter}</p>
     </div>
   );
 };
