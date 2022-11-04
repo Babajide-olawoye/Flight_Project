@@ -7,10 +7,14 @@ export default function Flight_Option(props) {
     const [counter, setCounter, counterRef] = useState(0);
     const [popoverOpen, setPopoverOpen] = useState(false);
 
+
     const toggle = () => {
         setPopoverOpen(!popoverOpen);
-        // props.setPopUp(true);
     }
+
+
+
+
 
     const incrementCount = () =>{
         setCounter(counter+1);
