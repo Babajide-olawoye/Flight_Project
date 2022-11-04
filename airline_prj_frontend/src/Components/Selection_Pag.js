@@ -18,8 +18,7 @@ export default function Selection_Page(props) {
   const { departDate } = location.state
   let count = 1;
 
-  console.log(departure)
-  console.log(arrival)
+  let price = 0;
 
   useEffect(() => {
     api.get('/' + departure.counterRef.current + '/' + arrival.destinationRef.current)
@@ -31,7 +30,7 @@ export default function Selection_Page(props) {
 
   }, []);
 
-
+  
 
   return (
     <div className="create1">
@@ -40,10 +39,12 @@ export default function Selection_Page(props) {
       <h4>All flight from {departure.counterRef.current} to {arrival.destinationRef.current}</h4>
 
       {data.map(({ airline, price, fly_out_time }) => {
-        return <Flight_Option airline={airline} price={price} flight={fly_out_time} count={count++} />
+        
+        return <Flight_Option  airline={airline} price={price} flight={fly_out_time} count={count++} />;
+        
       })}
 
-      {console.log(random)}
+      
 
 
       <div className="submit">

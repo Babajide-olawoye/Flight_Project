@@ -27,7 +27,7 @@ export default function Information_Page() {
   data.append('passportNo', passportNumRef.current);
   data.append('destination', destination);
   data.append('price', '120');
-  data.append('purchaseDat', purchaseDate);
+  data.append('purchaseDate', purchaseDate);
 
   console.log(purchaseDate)
 

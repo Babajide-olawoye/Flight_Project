@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 
-export default function Chosen_Flight() {
+export default function Chosen_Flight(props) {
   const [counter, setCounter] = useState(0);
+
 
   return (
     <div>
