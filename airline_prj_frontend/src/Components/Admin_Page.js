@@ -11,6 +11,7 @@ const api = axios.create({ baseURL: 'http://localhost:8082/api/v1/analytics' })
 export default function Admin_Page() {
 
   const [data, setData] = useState([]);
+  // const [count, setCount] = useState(1)
   const navigate = useNavigate();
 
 
@@ -37,6 +38,7 @@ export default function Admin_Page() {
         <h4>The list of purchases</h4>
 
         {data.map(({ id, name, destination, price, purchaseDate }) => {
+          // setCount(count +1);
           return <AdminPage_Child purchadeId={id} customerName={name} destination={destination} pricePaid ={price} purchaseDate ={purchaseDate}/>
         })}
 
@@ -45,7 +47,7 @@ export default function Admin_Page() {
 
         <div className="submit">
           <button onClick={signOut}>Sign out</button>
-          <label>Number of purchases made -</label>
+          {/* <label>Number of purchases made - {count}</label> */}
         </div>
 
 

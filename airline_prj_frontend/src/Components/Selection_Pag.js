@@ -17,7 +17,6 @@ export default function Selection_Page(props) {
   const { arrival } = location.state
   const { departDate } = location.state
   const [currentPrice, setCurrentPrice] = useState(0);
-  const [showPopUp, setShowPopUp] =useState(false)
   let count = 1;
 
   let price = 0;
@@ -36,21 +35,20 @@ export default function Selection_Page(props) {
     console.log(currentPrice)
     setCurrentPrice(currentPrice)
   }
+  
 
-  const toggle = ()=>{
-    setShowPopUp(false);
-  }
+
 
 
   return (
-    <div className="create1" onClick={toggle}>
+    <div className="create1" >
 
       <h2>Please select a Flight</h2>
       <h4>All flight from {departure.counterRef.current} to {arrival.destinationRef.current}</h4>
 
       {data.map(({ airline, price, fly_out_time }) => {
 
-        return <Flight_Option setPopUp={setShowPopUp} showPopUp={showPopUp}  getSubPrice={getPriceFromChosenFlight} airline={airline} price={price} flight={fly_out_time} count={count++} />;
+        return <Flight_Option  getSubPrice={getPriceFromChosenFlight} airline={airline} price={price} flight={fly_out_time} count={count++} />;
 
       })}
 
