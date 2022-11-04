@@ -54,9 +54,6 @@ export default function Selection_Page(props) {
 
       })}
 
-
-
-
       <div className="submit">
         <label id="date">Date selected: {departDate.startDateRef.current}</label>
         <button id="cont">
