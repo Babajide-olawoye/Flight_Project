@@ -19,7 +19,7 @@ option{
 /* create new flights form */
 .create {
   font-family: "Quicksand";
-  max-width: 400px;
+  max-width: 500px;
   padding: 20px;
   border-radius: 20px;
   margin: 200px auto;
@@ -51,9 +51,17 @@ option{
   background-color:#7d3cff;
   color: #fff;
   border: 0;
-  padding: 8px;
+  font-size: 15px;
   border-radius: 8px;
+  padding: 5px 20px 5px 20px;
   cursor: pointer;
+}
+.create button a{
+  background-color:#7d3cff;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  text-decoration: none;
 }
 
 /* Selection page */
@@ -74,7 +82,7 @@ option{
 
 .create1 {
   font-family: "Quicksand";
-  max-width: 400px;
+  max-width: 420px;
   padding: 20px;
   border-radius: 20px;
   margin: 200px auto;
@@ -99,14 +107,21 @@ option{
   background-color:#7d3cff;
   color: #fff;
   border: 0;
-  padding: 8px;
+  font-size: 15px;
   border-radius: 8px;
+  padding: 5px 20px 5px 20px;
   cursor: pointer;
 }
 .create1 button a{
   background-color:#7d3cff;
   color: #fff;
   cursor: pointer;
+  height: 50px;
+  text-decoration: none;
+}
+
+.details{
+  background-color: white;
 }
 
 .options div label{
@@ -123,7 +138,7 @@ option{
   
 }
 
-.options:hover:focus-visible {
+.options:hover {
   opacity: 5;
   animation-delay: 55ms;
   box-shadow: 1px 2px 7px 1px #7d3cff;
@@ -133,13 +148,14 @@ option{
 .create1 h4{
   background-color: white;
   color: rgb(185, 139, 255);
+  font-size: 20px;
 }
 
 /* Information page */
 
 .create3 {
   font-family: "Quicksand";
-  max-width: 400px;
+  max-width: 440px;
   padding: 20px;
   border-radius: 20px;
   margin: 200px auto;
@@ -162,12 +178,12 @@ option{
 }
 
 .create3 button {
-  text-align: center;
   background-color:#7d3cff;
   color: #fff;
   border: 0;
-  padding: 8px;
+  font-size: 13px;
   border-radius: 8px;
+  padding: 5px 20px 5px 20px;
   cursor: pointer;
 }
 
@@ -238,4 +254,5 @@ input{
 
 a{
   text-decoration: none;
+  background-color: white;
 }

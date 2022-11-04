@@ -21,15 +21,15 @@ export default function Flight_Option(props) {
         <div className="white">
             <label>Option {props.count}</label>
             <div className="options" type="button" id={"Popover" +props.count}>
-                <div>
+                <div className="details">
                     <h3>Airline name</h3>
                     <label id={props.airline}>{props.airline}</label>
                 </div>
-                <div>
+                <div className="details">
                     <h3>Price</h3>
                     <label id={props.price} >€{props.price}</label>
                 </div>
-                <div>
+                <div className="details">
                     <h3>Departure time</h3>
                     <label id={props.flight}>{props.flight}</label>
                 </div>
@@ -37,7 +37,7 @@ export default function Flight_Option(props) {
             </div>
 
             <Popover
-                placement="right"
+                placement="bottom"
                 isOpen={popoverOpen}
                 target={"Popover"+props.count}
                 toggle={toggle}
